@@ -8,10 +8,16 @@ const nunito = Nunito({ subsets: ["latin"], weight: ["800"], variable: "--font-n
 export const metadata: Metadata = {
   title: "Silly Board",
   description: "Tap a button, make noise, repeat.",
+  icons: {
+    icon: "/P-icon.png",
+    apple: "/P-icon.png",
+    shortcut: "/P-icon.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Silly Board",
+    startupImage: "/P-icon.png",
   },
 };
 
