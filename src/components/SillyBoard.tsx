@@ -152,7 +152,7 @@ export default function SillyBoard() {
             filter: "drop-shadow(0 0 18px rgba(255,255,255,0.15))",
           }}
         >
-          🎛️ SILLY BOARD
+          HPD SOUNDS
         </h1>
         <p className="text-[#555] text-xs tracking-[2px] uppercase mt-1 font-[var(--font-nunito)]">
           tap a button · make noise · repeat
@@ -267,7 +267,7 @@ export default function SillyBoard() {
       </div>
 
       <p className="text-[#333] text-[0.65rem] mt-8 tracking-widest uppercase relative z-10">
-        parker&apos;s silly board
+        HPD SOUNDS
       </p>
     </div>
   );

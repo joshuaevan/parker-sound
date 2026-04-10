@@ -6,7 +6,7 @@ const boogaloo = Boogaloo({ subsets: ["latin"], weight: "400", variable: "--font
 const nunito = Nunito({ subsets: ["latin"], weight: ["800"], variable: "--font-nunito" });
 
 export const metadata: Metadata = {
-  title: "Silly Board",
+  title: "HPD SOUNDS",
   description: "Tap a button, make noise, repeat.",
   icons: {
     icon: "/P-icon.png",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Silly Board",
+    title: "HPD SOUNDS",
     startupImage: "/P-icon.png",
   },
 };
