@@ -53,12 +53,26 @@ export default function SillyBoard() {
       audio = new Audio(`/sounds/${sound.file}`);
       audioCache.current.set(sound.id, audio);
     }
-    audio.currentTime = 0;
-    audio.play().catch(() => {});
 
+    // If this sound is already playing, stop and reset it
+    if (active === sound.id) {
+      audio.pause();
+      audio.currentTime = 0;
+      setActive(null);
+      return;
+    }
+
+    // Stop whatever was playing before
+    if (active) {
+      const prev = audioCache.current.get(active);
+      if (prev) { prev.pause(); prev.currentTime = 0; }
+    }
+
+    audio.currentTime = 0;
+    audio.onended = () => setActive(null);
+    audio.play().catch(() => {});
     setActive(sound.id);
-    setTimeout(() => setActive(null), 700);
-  }, []);
+  }, [active]);
 
   return (
     <div className="min-h-screen bg-[#0d0d1a] flex flex-col items-center px-3 pt-8 pb-safe overflow-x-hidden relative">
