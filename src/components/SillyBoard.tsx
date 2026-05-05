@@ -41,6 +41,7 @@ const SOUNDS: Sound[] = [
   { id: "round3", file: "round-3.mp3", emoji: "🥊", label: "Round 3!", color: "#eb4d4b" },
   { id: "amongus", file: "among-us-role-reveal-sound.mp3", emoji: "🛸", label: "Among Us", color: "#ff6b6b" },
   { id: "animewow", file: "anime-wow-sound-effect-mp3cut.mp3", emoji: "😮", label: "Anime Wow", color: "#ffa502" },
+  { id: "animeshine", file: "anime-shine.mp3", emoji: "✨", label: "Anime Shine", color: "#ffeaa7" },
   { id: "outofmind", file: "are-you-out-of-your-mind-greenscreen-change-quality-and-end-wont-cut-off_2.mp3", emoji: "🤯", label: "Out of Mind", color: "#e056fd" },
   { id: "babylaugh", file: "baby-laughing-meme.mp3", emoji: "👶", label: "Baby Laugh", color: "#ff9ff3" },
   { id: "dundundun", file: "dun-dun-dun-sound-effect-brass_8nFBccR.mp3", emoji: "🎺", label: "Dun Dun Dun", color: "#f9ca24" },
