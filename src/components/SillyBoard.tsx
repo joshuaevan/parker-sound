@@ -10,6 +10,8 @@ type Sound = {
   emoji: string;
   label: string;
   color: string;
+  /** Subfolder inside /public/sounds. Omit for the root folder. */
+  folder?: string;
 };
 
 const SOUNDS: Sound[] = [
@@ -57,6 +59,61 @@ const SOUNDS: Sound[] = [
   { id: "y2clip", file: "y2mate-mp3cut_sRzY6rh.mp3", emoji: "🎬", label: "Clip", color: "#6c5ce7" },
 ];
 
+const MANDO_SOUNDS: Sound[] = [
+  { id: "m-thisistheway", file: "this-is-the-way-this-is-the-way-mandalorian.mp3", emoji: "🛡️", label: "This is the Way", color: "#4ecdc4" },
+  { id: "m-imamando", file: "i-m-a-mandalorian.mp3", emoji: "🪖", label: "I'm a Mandalorian", color: "#74b9ff" },
+  { id: "m-mandalorian", file: "mandalorian.mp3", emoji: "🪖", label: "Mandalorian", color: "#b2bec3" },
+  { id: "m-weapons", file: "i-m-a-mandalorian-weapons-are-part-of-my-religion.mp3", emoji: "🔫", label: "I'm a Mandalorian. Weapons are part of my religion", color: "#e17055" },
+  { id: "m-beskar", file: "beskar.mp3", emoji: "⚙️", label: "Beskar", color: "#f0932b" },
+  { id: "m-warmorcold", file: "i-can-bring-you-in-warm-or-i-can-bring-you-in-cold.mp3", emoji: "❄️", label: "I can bring you in warm, or I can bring you in cold", color: "#74b9ff" },
+  { id: "m-orcold", file: "or-i-can-bring-you-in-cold.mp3", emoji: "🧊", label: "Or I can bring you in cold", color: "#4ecdc4" },
+  { id: "m-nodroids", file: "no-droids.mp3", emoji: "🤖", label: "No droids", color: "#eb4d4b" },
+  { id: "m-yes", file: "yes.mp3", emoji: "✅", label: "Yes", color: "#a8e063" },
+  { id: "m-no", file: "no.mp3", emoji: "❌", label: "No", color: "#ff6b6b" },
+  { id: "m-alright", file: "alright.mp3", emoji: "👍", label: "Alright", color: "#badc58" },
+  { id: "m-fine", file: "fine.mp3", emoji: "😐", label: "Fine", color: "#95afc0" },
+  { id: "m-notyet", file: "not-yet.mp3", emoji: "⏱️", label: "Not yet", color: "#a29bfe" },
+  { id: "m-iunderstand", file: "i-understand.mp3", emoji: "👌", label: "I understand", color: "#7bed9f" },
+  { id: "m-ilikethoseodds", file: "i-like-those-odds.mp3", emoji: "🎲", label: "I like those odds", color: "#f9ca24" },
+  { id: "m-hereswhat", file: "here-s-what-i-m-going-to-do.mp3", emoji: "📋", label: "Here's what I'm going to do", color: "#fdcb6e" },
+  { id: "m-hereswhat2", file: "here-s-what-i-m-gonna-do-pt2.mp3", emoji: "📋", label: "Here's what I'm gonna do", color: "#f0932b" },
+  { id: "m-donttouch", file: "don-t-touch-anything-i-ll-find-us-some-lodging-and-i-ll-come-back-for-you.mp3", emoji: "✋", label: "Don't touch anything. I'll find us some lodging and I'll come back for you", color: "#ff7675" },
+  { id: "m-donttouch2", file: "don-t-touch-anything-pt2.mp3", emoji: "✋", label: "Don't touch anything", color: "#ff9ff3" },
+  { id: "m-selfdestruct", file: "do-not-self-destruct.mp3", emoji: "💥", label: "Do not self destruct", color: "#eb4d4b" },
+  { id: "m-outofyourmind", file: "are-you-out-of-your-mind.mp3", emoji: "🤯", label: "Are you out of your mind?", color: "#e056fd" },
+  { id: "m-areyouok", file: "are-you-ok.mp3", emoji: "🩹", label: "Are you ok?", color: "#55efc4" },
+  { id: "m-haveaword", file: "excuse-me-can-i-have-a-word.mp3", emoji: "🙋", label: "Excuse me, can I have a word?", color: "#74b9ff" },
+  { id: "m-talklater", file: "can-we-talk-about-this-later.mp3", emoji: "⏳", label: "Can we talk about this later?", color: "#a29bfe" },
+  { id: "m-trustyou", file: "how-do-i-know-i-can-trust-you.mp3", emoji: "🤨", label: "How do I know I can trust you?", color: "#fdcb6e" },
+  { id: "m-endup", file: "how-did-you-end-up-here.mp3", emoji: "🧭", label: "How did you end up here?", color: "#4ecdc4" },
+  { id: "m-endup2", file: "how-d-you-end-up-here.mp3", emoji: "🧭", label: "How'd you end up here?", color: "#6c5ce7" },
+  { id: "m-wheredoyoulive", file: "where-do-you-live.mp3", emoji: "🏠", label: "Where do you live?", color: "#ffeaa7" },
+  { id: "m-whatelse", file: "what-else-did-he-say.mp3", emoji: "👂", label: "What else did he say?", color: "#ff9ff3" },
+  { id: "m-helpyouwith", file: "is-there-something-i-can-help-you-with.mp3", emoji: "🤔", label: "Is there something I can help you with?", color: "#81ecec" },
+  { id: "m-landspeeder", file: "do-you-have-a-landspeeder-or-speeder-bike-that-i-could-hire.mp3", emoji: "🛸", label: "Do you have a landspeeder or speeder bike that I could hire?", color: "#a29bfe" },
+  { id: "m-passage", file: "i-need-passage-to-the-yards.mp3", emoji: "🚀", label: "I need passage to the yards", color: "#74b9ff" },
+  { id: "m-nextjob", file: "i-want-my-next-job.mp3", emoji: "💼", label: "I want my next job", color: "#f0932b" },
+  { id: "m-thatsall", file: "that-s-all-you-can-give-me.mp3", emoji: "💰", label: "That's all you can give me?", color: "#f9ca24" },
+  { id: "m-crewmember", file: "i-could-use-a-crew-member-of-your-ability.mp3", emoji: "🤝", label: "I could use a crew member of your ability", color: "#55efc4" },
+  { id: "m-empiregone", file: "i-don-t-know-if-you-heard-but-the-empire-is-gone.mp3", emoji: "🏛️", label: "I don't know if you heard, but the Empire is gone", color: "#95afc0" },
+  { id: "m-dontwanthelp", file: "i-don-t-know-if-i-want-your-help.mp3", emoji: "🙅", label: "I don't know if I want your help", color: "#ff7979" },
+  { id: "m-dontbelong", file: "i-don-t-belong-here.mp3", emoji: "🚪", label: "I don't belong here", color: "#686de0" },
+  { id: "m-trapped", file: "i-m-trapped-here.mp3", emoji: "⛓️", label: "I'm trapped here", color: "#7f8c8d" },
+  { id: "m-thankyou", file: "thank-you.mp3", emoji: "🙏", label: "Thank you", color: "#a8e063" },
+  { id: "m-cantthankyou", file: "i-can-t-thank-you-enough.mp3", emoji: "🙏", label: "I can't thank you enough", color: "#badc58" },
+  { id: "m-thoughtful", file: "that-s-very-thoughtful-of-you.mp3", emoji: "😌", label: "That's very thoughtful of you", color: "#ffeaa7" },
+  { id: "m-greathonor", file: "that-would-be-a-great-honor.mp3", emoji: "🏅", label: "That would be a great honor", color: "#fdcb6e" },
+  { id: "m-reward", file: "please-allow-me-to-give-you-a-reward.mp3", emoji: "🎁", label: "Please allow me to give you a reward", color: "#fd79a8" },
+  { id: "m-pathscross", file: "till-our-paths-cross.mp3", emoji: "👋", label: "Till our paths cross", color: "#4ecdc4" },
+].map((s) => ({ ...s, folder: "mando" }));
+
+const TABS = [
+  { id: "hpd", label: "HPD", sounds: SOUNDS },
+  { id: "mando", label: "Mando", sounds: MANDO_SOUNDS },
+] as const;
+
+type TabId = (typeof TABS)[number]["id"];
+
 // Ignore pointer-up as a "tap" if the finger moved this far (scroll vs tap).
 const TAP_SLOP_PX = 14;
 const TAP_SLOP2 = TAP_SLOP_PX * TAP_SLOP_PX;
@@ -66,6 +123,7 @@ const TAP_SLOP2 = TAP_SLOP_PX * TAP_SLOP_PX;
 export default function SillyBoard() {
   const [active, setActive] = useState<string | null>(null);
   const [showIcons, setShowIcons] = useState(true);
+  const [tab, setTab] = useState<TabId>("hpd");
   const audioCache = useRef<Map<string, HTMLAudioElement>>(new Map());
   const tapRef = useRef<{ id: string | null; x: number; y: number; dragged: boolean }>({
     id: null,
@@ -80,7 +138,8 @@ export default function SillyBoard() {
   const handlePlay = useCallback((sound: Sound) => {
     let audio = audioCache.current.get(sound.id);
     if (!audio) {
-      audio = new Audio(`/sounds/${sound.file}`);
+      const path = sound.folder ? `/sounds/${sound.folder}/${sound.file}` : `/sounds/${sound.file}`;
+      audio = new Audio(path);
       audioCache.current.set(sound.id, audio);
     }
 
@@ -103,6 +162,17 @@ export default function SillyBoard() {
     audio.play().catch(() => { });
     setActive(sound.id);
   }, [active]);
+
+  const handleTabChange = useCallback((next: TabId) => {
+    if (active) {
+      const playing = audioCache.current.get(active);
+      if (playing) { playing.pause(); playing.currentTime = 0; }
+      setActive(null);
+    }
+    setTab(next);
+  }, [active]);
+
+  const sounds = TABS.find((t) => t.id === tab)?.sounds ?? SOUNDS;
 
   return (
     <div className="min-h-screen bg-[#0d0d1a] flex flex-col items-center px-3 pt-8 pb-safe overflow-x-hidden relative">
@@ -160,6 +230,39 @@ export default function SillyBoard() {
         </p>
       </div>
 
+      {/* Tabs */}
+      <div
+        role="tablist"
+        aria-label="Sound collections"
+        className={`flex w-full max-w-xs gap-2 rounded-2xl border-2 border-[#222] bg-[#14142a] p-1.5 relative z-10 ${
+          showIcons ? "mb-6" : "mb-3"
+        }`}
+      >
+        {TABS.map((t) => {
+          const isCurrent = t.id === tab;
+          return (
+            <button
+              key={t.id}
+              type="button"
+              role="tab"
+              aria-selected={isCurrent}
+              onClick={() => handleTabChange(t.id)}
+              className="flex-1 rounded-xl py-2 font-[var(--font-nunito)] font-extrabold text-[0.8rem] uppercase tracking-[0.12em] cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-[#a29bfe]"
+              style={{
+                background: isCurrent ? "linear-gradient(145deg,#a29bfe,#6c5ce7)" : "transparent",
+                color: isCurrent ? "#0d0d1a" : "#6c6c8a",
+                boxShadow: isCurrent ? "0 0 18px #a29bfe55" : "none",
+                transition: "background 0.12s ease, color 0.12s ease",
+                WebkitTapHighlightColor: "transparent",
+                touchAction: "manipulation",
+              }}
+            >
+              {t.label}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Sound Grid */}
       <div
         className={`grid w-full relative z-10 ${
@@ -168,8 +271,9 @@ export default function SillyBoard() {
             : "max-w-2xl grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2"
         }`}
       >
-        {SOUNDS.map((sound) => {
+        {sounds.map((sound) => {
           const isActive = active === sound.id;
+          const isLongLabel = sound.label.length > 26;
           return (
             <button
               key={sound.id}
@@ -257,7 +361,13 @@ export default function SillyBoard() {
               ) : null}
               <span
                 className={`font-[var(--font-nunito)] font-extrabold text-center leading-tight tracking-wide ${
-                  showIcons ? "text-[0.8rem]" : "text-[0.68rem] sm:text-[0.72rem]"
+                  showIcons
+                    ? isLongLabel
+                      ? "text-[0.68rem]"
+                      : "text-[0.8rem]"
+                    : isLongLabel
+                      ? "text-[0.6rem] sm:text-[0.64rem]"
+                      : "text-[0.68rem] sm:text-[0.72rem]"
                 }`}
               >
                 {sound.label}
